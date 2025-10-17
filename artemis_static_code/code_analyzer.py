@@ -1,6 +1,6 @@
 """Static code analysis functionality for ARTEMIS."""
 
-from artemis_static_code.log_utils import setup_logger
+from horizon_core.logging import get_logger
 
 
 class CodeAnalyzer:
@@ -8,7 +8,7 @@ class CodeAnalyzer:
     
     def __init__(self):
         """Initialize the code analyzer."""
-        self.logger = setup_logger(__name__)
+        self.logger = get_logger(__name__)
         self.logger.info("CodeAnalyzer initialized")
     
     def analyze(self, path):

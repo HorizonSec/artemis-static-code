@@ -1,13 +1,14 @@
 """CLI entry point for ARTEMIS Static Code Analysis."""
 
 import sys
-from artemis_static_code.log_utils import setup_logger
+from horizon_core.logging import setup_logging, get_logger
 from artemis_static_code.code_analyzer import CodeAnalyzer
 
 
 def main():
     """Main entry point for the CLI."""
-    logger = setup_logger(__name__)
+    setup_logging(level="INFO")
+    logger = get_logger(__name__)
     logger.info("Starting ARTEMIS Static Code Analysis")
     
     analyzer = CodeAnalyzer()

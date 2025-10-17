@@ -14,6 +14,7 @@ authors = [
 license = { file = "LICENSE" }
 keywords = ["security", "static code analysis", "cli"]
 dependencies = [
+    "horizon-core @ git+https://github.com/HorizonSec/horizon-core.git",
     "flake8>=5.0",
     "pyyaml>=6.0",
 ]
@@ -21,5 +22,8 @@ scripts = { "artemis" = "artemis_static_code.cli:main" }
 
 [tool.hatch.version]
 path = "artemis_static_code/__init__.py"
+
+[tool.hatch.metadata]
+allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
