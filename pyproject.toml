@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "artemis-static-code"
+version = "0.1.0"
+description = "ARTEMIS module for static code analysis"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    { name = "TheWinterShadow", email = "your_email@example.com" }
+]
+license = { file = "LICENSE" }
+keywords = ["security", "static code analysis", "cli"]
+dependencies = [
+    "horizon-core @ git+https://github.com/HorizonSec/horizon-core.git",
+    "flake8>=5.0",
+    "pyyaml>=6.0",
+]
+scripts = { "artemis" = "artemis_static_code.cli:main" }
+
+[tool.hatch.version]
+path = "artemis_static_code/__init__.py"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
